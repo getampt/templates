@@ -1,4 +1,4 @@
-import { http, storage, schedules } from "@ampt/sdk";
+import { http, storage, schedule } from "@ampt/sdk";
 import express, { Router, Request, Response, NextFunction } from "express";
 
 import {
@@ -33,7 +33,7 @@ const files = Router({ mergeParams: true });
 app.use("/todos", todos);
 app.use("/files", files);
 
-schedules("incomplete check").every("1 hour", async () => {
+schedule("incomplete check").every("1 hour", async () => {
   const { items } = await queryItems({
     status: QueryStatus.Incomplete,
     limit: 100,
