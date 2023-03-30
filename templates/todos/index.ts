@@ -8,7 +8,7 @@ import {
   queryItems,
   QueryStatus,
   updateItem,
-} from "./data";
+} from "./data"; 
 
 const auth = (req: Request, res: Response, next: NextFunction) => {
   const { headers } = req;
