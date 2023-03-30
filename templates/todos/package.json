@@ -5,6 +5,7 @@
   "type": "module",
   "dependencies": {
     "@ampt/data": "latest",
+    "@ampt/sdk": "latest",
     "express": "^4.18.2",
     "nanoid": "^4.0.1"
   },
