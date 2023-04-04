@@ -1,0 +1,55 @@
+import { ws, events } from "@ampt/sdk";
+
+ws.on("connected", (connection) => {
+  console.log(`new connection: ${connection.connectionId}`);
+});
+
+ws.on("disconnected", (connection) => {
+  console.log(`connection closed: ${connection.connectionId}`);
+});
+
+type IncomingMessage = {
+  task: "start";
+};
+
+ws.on<IncomingMessage>("message", async (connection, message) => {
+  console.log(`message received: ${JSON.stringify(message)}`);
+  if (message.task === "start") {
+    await events.publish("async-task-start", {
+      connectionId: connection.connectionId,
+    });
+    await connection.send("Started Task");
+  }
+});
+
+events.on("async-task-start", async ({ body }) => {
+  const { connectionId } = body;
+
+  const startTime = Date.now();
+
+  if (await ws.isConnected(connectionId)) {
+    await ws.send(connectionId, "Received Task, doing async work...");
+
+    await events.publish(
+      "async-task-complete",
+      {
+        after: "10 seconds",
+      },
+      {
+        connectionId,
+        startTime,
+      }
+    );
+  } else {
+    console.error(`Connection ${connectionId} is no longer connected`);
+  }
+});
+
+events.on("async-task-complete", async ({ body }) => {
+  const { connectionId, startTime } = body;
+
+  if (await ws.isConnected(connectionId)) {
+    const duration = Math.floor((Date.now() - startTime) / 1000);
+    await ws.send(connectionId, `Task complete after ${duration}s`);
+  }
+});
