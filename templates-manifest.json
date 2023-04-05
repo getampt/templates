@@ -33,5 +33,10 @@
     "name": "nextjs",
     "title": "NextJS Starter Template (v12)",
     "description": "Simple NextJS starter"
+  },
+  {
+    "name": "websockets",
+    "title": "WebSockets starter template",
+    "description": "Simple WebSockets starter"
   }
 ]
