@@ -4,7 +4,7 @@ import { Button, Header } from "./components";
 import "./App.css";
 
 function App() {
-  const wsUrl = import.meta.env.VITE_AMPT_WS_URL;
+  const wsUrl = import.meta.env["VITE_AMPT_WS_URL"];
   const [messageHistory, setMessageHistory] = useState([]);
   const { sendMessage, lastMessage, readyState } = useWebSocket(wsUrl);
 
