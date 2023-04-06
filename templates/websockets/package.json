@@ -12,7 +12,7 @@
     "ampt:dev": "npm run start"
   },
   "dependencies": {
-    "@ampt/sdk": "latest",
+    "@ampt/sdk": "^0.0.1-beta.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use-websocket": "^4.3.1"

@@ -1,15 +1,23 @@
 import React, { useState, useCallback, useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import { Button, Header } from "./components";
+import { Spinner, Button, Header } from "./components";
 import "./App.css";
 
 function App() {
   const wsUrl = import.meta.env["VITE_AMPT_WS_URL"];
   const [messageHistory, setMessageHistory] = useState([]);
+  const [processing, setProcessing] = useState(false);
   const { sendMessage, lastMessage, readyState } = useWebSocket(wsUrl);
 
   useEffect(() => {
     if (lastMessage !== null) {
+      if (lastMessage.data.includes("Started Task")) {
+        setProcessing(true);
+      }
+
+      if (lastMessage.data.includes("Task complete")) {
+        setProcessing(false);
+      }
       setMessageHistory((prev) => prev.concat(lastMessage));
     }
   }, [lastMessage, setMessageHistory]);
@@ -39,7 +47,14 @@ function App() {
         <h1 className="text-3xl font-bold">Welcome to Ampt WebSockets!</h1>
         <div style={{ height: "30px" }} />
         <div style={{ flex: 1, flexDirection: "column" }}>
-          <Button text="Start Async Process" onPress={handleClickSendMessage} />
+          {processing ? (
+            <Spinner text="Processing..." />
+          ) : (
+            <Button
+              text="Start Async Process"
+              onPress={handleClickSendMessage}
+            />
+          )}
           <div style={{ height: "30px" }} />
           <h1 className="text-2xl font-bold underline">Received Messages</h1>
           {messageHistory.map((message, idx) => (
