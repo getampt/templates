@@ -2,16 +2,19 @@
   {
     "name": "javascript-express-api",
     "title": "JavaScript API (Express)",
-    "description": "Starter Express API template using JavaScript"
+    "description": "Starter Express API template using JavaScript",
+    "image": "images/javascript-express-api.svg"
   },
   {
     "name": "typescript-express-api",
     "title": "TypeScript API (Express)",
-    "description": "Starter Express API template using TypeScript"
+    "description": "Starter Express API template using TypeScript",
+    "image": "images/typscript-express-api.svg"
   },
   {
     "name": "ampt-api",
     "title": "Ampt API (Experimental)",
-    "description": "Starter template using @ampt/api and TypeScript"
+    "description": "Starter template using @ampt/api and TypeScript",
+    "image": "images/ampt-api.svg"
   }
 ]
