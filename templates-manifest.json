@@ -9,7 +9,7 @@
     "name": "typescript-express-api",
     "title": "TypeScript API (Express)",
     "description": "Starter Express API template using TypeScript",
-    "image": "images/typscript-express-api.svg"
+    "image": "images/typescript-express-api.svg"
   },
   {
     "name": "ampt-api",
