@@ -1,42 +1,17 @@
 [
   {
-    "name": "javascript-api",
-    "title": "JavaScript api (Express)",
-    "description": "Starter template using JavaScript"
+    "name": "javascript-express-api",
+    "title": "JavaScript API (Express)",
+    "description": "Starter Express API template using JavaScript"
   },
   {
-    "name": "typescript-api",
-    "title": "TypeScript api (Express)",
-    "description": "Starter template using TypeScript"
+    "name": "typescript-express-api",
+    "title": "TypeScript API (Express)",
+    "description": "Starter Express API template using TypeScript"
   },
   {
     "name": "ampt-api",
     "title": "Ampt API (Experimental)",
-    "description": "Starter template using TypeScript"
-  },
-  {
-    "name": "todos",
-    "title": "Todo List App",
-    "description": "Simple TODO List API utilizing Express, Ampt Data and Storage"
-  },
-  {
-    "name": "react",
-    "title": "React",
-    "description": "React starter app"
-  },
-  {
-    "name": "astro",
-    "title": "Astro Web Store",
-    "description": "Simple web store built with Astro"
-  },
-  {
-    "name": "nextjs",
-    "title": "NextJS Starter Template (v12)",
-    "description": "Simple NextJS starter"
-  },
-  {
-    "name": "websockets",
-    "title": "WebSockets starter template",
-    "description": "Simple WebSockets starter"
+    "description": "Starter template using @ampt/api and TypeScript"
   }
 ]
