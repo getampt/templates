@@ -16,5 +16,11 @@
     "title": "Ampt API (Experimental)",
     "description": "Starter template using @ampt/api and TypeScript",
     "image": "images/ampt-api.svg"
+  },
+  {
+    "name": "react-vite",
+    "title": "React + Vite",
+    "description": "Starter template using React + Vite + SWC",
+    "image": "images/react-vite.svg"
   }
 ]
