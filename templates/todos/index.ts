@@ -1,5 +1,5 @@
-import { http, storage, schedule } from "@ampt/sdk";
-import express, { Router, Request, Response, NextFunction } from "express";
+import { http, schedule, storage } from "@ampt/sdk";
+import express, { NextFunction, Request, Response, Router } from "express";
 
 import {
   createItem,
@@ -26,6 +26,7 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
 
 const app = express();
 app.use("*", auth);
+app.use(express.json());
 
 const todos = Router({ mergeParams: true });
 const files = Router({ mergeParams: true });
