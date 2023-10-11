@@ -15,11 +15,6 @@
     "description": "Starter template using TypeScript"
   },
   {
-    "name": "todos",
-    "title": "Todo List App",
-    "description": "Simple TODO List API utilizing Express, Ampt Data and Storage"
-  },
-  {
     "name": "react",
     "title": "React",
     "description": "React starter app"
@@ -28,11 +23,6 @@
     "name": "astro",
     "title": "Astro Web Store",
     "description": "Simple web store built with Astro"
-  },
-  {
-    "name": "nextjs",
-    "title": "NextJS Starter Template (v12)",
-    "description": "Simple NextJS starter"
   },
   {
     "name": "websockets",
