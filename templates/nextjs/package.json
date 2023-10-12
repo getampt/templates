@@ -11,7 +11,7 @@
   "dependencies": {
     "@ampt/cli": "*",
     "@ampt/data": "*",
-    "@ampt/nextjs": "*",
+    "@ampt/nextjs": "^1",
     "@ampt/sdk": "*",
     "next": "12.3.1",
     "react": "^18.2.0",
